@@ -1,0 +1,17 @@
+.response-div {
+    background-color: #EEEEEE;
+    margin: 5% 0;
+    max-width: 53vw;
+}
+
+.prompt-box,
+.response-box {
+    display: flex;
+    margin: 0 2%;
+}
+
+.prompt-box p, 
+.response-box p {
+    margin-left: 20px;
+    margin-top: 3%;
+}
