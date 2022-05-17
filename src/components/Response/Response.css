@@ -1,7 +1,7 @@
 .response-div {
     border-radius: 20px;
     margin: 5% 0;
-    max-width: 53vw;
+    width: 80vw;
 }
 
 .prompt-box {
@@ -19,12 +19,20 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    height: auto;
+    overflow: scroll;
     margin: 2% 0;
-    padding: 0 2%;
+    max-width: 100%;
+    padding: 2%;
 }
 
 .prompt-box p, 
 .response-box p {
     margin-left: 20px;
-    margin-top: 3.5%;
 }
+
+@media screen and (min-width: 1024px) {
+    .response-div {
+      width: 65vw;
+    }
+  }

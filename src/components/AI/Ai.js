@@ -21,15 +21,13 @@ export function Ai () {
         body: JSON.stringify({
             "prompt": `${input}`,
             "temperature": 0,
-            "max_tokens": 38
+            "max_tokens": 92
         })
         })
         .then(response => response.json())
         .then(setPrompt(state => [...state, input]))
         .then(data => setResponse(state => [...state, data.choices[0].text]))
         setLoading(false)
-        window.sessionStorage.setItem('prompt', prompt)
-        window.sessionStorage.setItem('response', response)
     }
 
     const handleChange = (e) => {
@@ -39,18 +37,18 @@ export function Ai () {
 
     return (
         <div>
-            <h1 className='App-title'>Fun with AI</h1>
-
             <p className='prompt-title'><i>Enter prompt</i></p>
-                <textarea 
-                    type="text" 
-                    id="prompt" 
-                    name="prompt"
-                    placeholder='Say this is a test'
-                    value={input}
-                    onChange={e => handleChange(e)}
-                />
-            <input type="submit" value="Submit" className="prompt-button" onClick={getResponse} />
+            <div className='prompt-area'>
+                    <textarea 
+                        type="text" 
+                        id="prompt" 
+                        name="prompt"
+                        placeholder='Say this is a test'
+                        value={input}
+                        onChange={e => handleChange(e)}
+                    />
+                <input type="submit" value="Submit" className="prompt-button" onClick={getResponse} />
+            </div>
             <h2 className='response-title'>Responses</h2>
             {loading ? <div id='loading'><p>Loading....</p></div> : <></>}
             {response.map((r, id) => (

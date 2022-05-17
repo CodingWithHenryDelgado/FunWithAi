@@ -1,19 +1,31 @@
 .App {
-  background-color: #2A2932;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   text-align: left;
-  height: 100vh;
   width: 100vw;
   margin: 0 auto;
 }
 
+.App-title {
+  color: #FFF;
+  font-size: 10vw;
+}
+
 html {
+  background-color: #2A2932;
   margin: 0;
 }
 
-.app-stuff {
-  width: 60vw;
+@media screen and (min-width: 768px) {
+  .app-stuff {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .App-title {
+    font-size: 5vw;
+  }
 }
