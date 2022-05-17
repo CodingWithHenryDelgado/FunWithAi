@@ -1,17 +1,30 @@
 .response-div {
-    background-color: #EEEEEE;
+    border-radius: 20px;
     margin: 5% 0;
     max-width: 53vw;
 }
 
+.prompt-box {
+    background-color: #E9E9EB;
+}
+
+.response-box {
+    background-color: #218FFD;
+    color: #FFF;
+}
+
 .prompt-box,
 .response-box {
+    border-radius: 20px;
     display: flex;
-    margin: 0 2%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2% 0;
+    padding: 0 2%;
 }
 
 .prompt-box p, 
 .response-box p {
     margin-left: 20px;
-    margin-top: 3%;
+    margin-top: 3.5%;
 }

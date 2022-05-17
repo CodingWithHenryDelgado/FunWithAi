@@ -1,20 +1,55 @@
+.App-title {
+    color: #FFF;
+    font-size: 6vh;
+}
+
+#loading {
+    color: #FFF;
+    font-size: 4vh;
+}
+
 #prompt {
+    background-color: #2A2932;
+    color: #5EE346;
+    font-size: 2.5vh;
     padding-bottom: 100px;
     width: 87%;
-  }
+}
+
+#prompt:focus {
+    border-color: #5EE346;
+    outline: 0 none;
+}
   
-  .prompt-title {
-    margin: 0 auto;
-  }
+.prompt-title {
+    color: #FFF;
+    margin: 0 auto 1% 0;
+}
   
-  .prompt-button {
+.prompt-button {
     background-color: #0043C8;
     border: none;
     border-radius: 5px;
     color: #FFF;
+    font-size: 2vh;
     height: 50px;
     margin-left: 74%;
     margin-top: 3px;
     width: 125px;
-  }
+}
+
+.prompt-button:hover {
+    color: #0043C8;
+    background-color: #FFF;
+}
+
+.prompt-button:after {
+    color: #5EE346;
+}
   
+.response-title {
+    color: #FFF;
+    font-size: 5vh;
+    margin: 1% 0;
+    text-decoration: underline;
+}
