@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Response from './../Response/Response';
 import './Ai.css'
-const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+const API_KEY = "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";
 
 export function Ai () {
     const [input, setInput] = useState('')
