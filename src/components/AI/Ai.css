@@ -57,7 +57,7 @@
 
 @media screen and (min-width: 768px) {
     .prompt-area {
-      padding: 0 12%;
+      width: 70vw;
     }
 }
 
