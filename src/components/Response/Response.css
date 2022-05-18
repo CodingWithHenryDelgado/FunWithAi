@@ -20,8 +20,8 @@
     justify-content: flex-start;
     align-items: center;
     height: auto;
-    overflow: scroll;
     margin: 2% 0;
+    overflow-y: auto;
     max-width: 100%;
     padding: 2%;
 }
