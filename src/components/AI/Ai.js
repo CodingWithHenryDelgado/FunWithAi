@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Response from './../Response/Response';
 import './Ai.css'
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+const API_KEY_2 = `${process.env.REACT_APP_API_KEY_2}`
 
 export function Ai () {
     const [input, setInput] = useState('')
@@ -16,7 +17,7 @@ export function Ai () {
         method: "POST",
         headers: {
            "Content-Type": "application/json",
-           Authorization: `Bearer ${API_KEY}`,
+           Authorization: `Bearer ${API_KEY}${API_KEY_2}`,
         },
         body: JSON.stringify({
             "prompt": `${input}`,
@@ -32,6 +33,7 @@ export function Ai () {
 
     const handleChange = (e) => {
         e.preventDefault()
+        console.log(`${API_KEY}${API_KEY_2}`)
         setInput(e.target.value)
     }
 
