@@ -16,6 +16,7 @@
 html {
   background-color: #2A2932;
   margin: 0;
+  overflow-x: hidden;
 }
 
 @media screen and (min-width: 768px) {

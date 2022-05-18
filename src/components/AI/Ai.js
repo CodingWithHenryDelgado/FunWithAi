@@ -35,6 +35,14 @@ export function Ai () {
         setInput(e.target.value)
     }
 
+    const handleKeyChange = (e) => {
+        if(e.keyCode === 13 && e.shiftKey === false) {
+            e.preventDefault()
+            setInput(e.target.value)
+            getResponse();
+        }
+    }
+
     return (
         <div>
             <p className='prompt-title'><i>Enter prompt</i></p>
@@ -46,6 +54,7 @@ export function Ai () {
                         placeholder='Say this is a test'
                         value={input}
                         onChange={e => handleChange(e)}
+                        onKeyDown={e => handleKeyChange(e)}
                     />
                 <input type="submit" value="Submit" className="prompt-button" onClick={getResponse} />
             </div>
