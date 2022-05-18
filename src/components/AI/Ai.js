@@ -33,7 +33,6 @@ export function Ai () {
 
     const handleChange = (e) => {
         e.preventDefault()
-        console.log(`${API_KEY}${API_KEY_2}`)
         setInput(e.target.value)
     }
 
