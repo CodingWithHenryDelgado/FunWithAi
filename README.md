@@ -1,7 +1,7 @@
 # Fun With AI
 
 ## Tools Used:
-* OPEN AI API "text-curie-001"
+* [OPEN AI API "text-curie-001"](https://beta.openai.com/docs/api-reference/completions)
 
 ### AI.js
 * Where you fill the text area with a prompt and submit to see it's response.
