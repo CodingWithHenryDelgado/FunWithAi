@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import './../Response/Response.css'
 import Response from './../Response/Response';
+import Prompt from './../Prompt/Prompt';
 import './Ai.css'
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 const API_KEY_2 = `${process.env.REACT_APP_API_KEY_2}`
@@ -13,6 +15,7 @@ export function Ai() {
     const getResponse = async () => {
         setLoading(true)
         setInput('')
+        setPrompt(state => [...state, input])
         await fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
             method: "POST",
             headers: {
@@ -26,7 +29,6 @@ export function Ai() {
             })
         })
             .then(response => response.json())
-            .then(setPrompt(state => [...state, input]))
             .then(data => setResponse(state => [...state, data.choices[0].text]))
         setLoading(false)
     }
@@ -62,12 +64,17 @@ export function Ai() {
             <h2 className='response-title'>Responses</h2>
             {loading ? <div id='loading'><p>Loading....</p></div> : <></>}
             {response.map((r, id) => (
-                <Response
-                    prompt={prompt[id]}
-                    response={r}
-                    key={id}
-                />
-            )).reverse()}
+                <div className='response-div' key={id + 100}>
+                    <Prompt
+                        prompt={prompt[id]}
+                        key={prompt}
+                    />
+                    <Response
+                        response={r}
+                        key={r}
+                    />
+                </div>
+            ))}
         </div>
     )
 }
