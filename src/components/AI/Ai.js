@@ -75,6 +75,6 @@ export function Ai() {
                 />
                 <input type="submit" value={<FontAwesomeIcon icon={["fa-sharp", "fa-solid", "fa-arrow-turn-down-left"]} />} id="prompt-button" onClick={getResponse} />
             </div>
-        </div>
+        </div >
     )
 }
