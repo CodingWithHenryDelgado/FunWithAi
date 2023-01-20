@@ -3,6 +3,8 @@ import './../Response/Response.css'
 import Response from './../Response/Response';
 import Prompt from './../Prompt/Prompt';
 import './Ai.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Loading from './../Loading/Loading';
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 const API_KEY_2 = `${process.env.REACT_APP_API_KEY_2}`
 
@@ -47,34 +49,32 @@ export function Ai() {
     }
 
     return (
-        <div>
-            <p className='prompt-title'><i>Enter prompt</i></p>
+        <div className='chat'>
+            <div className='response-div'>
+                <Prompt
+                    prompt={prompt}
+                    key={prompt}
+                />
+                <Loading
+                    loading={loading}
+                />
+                <Response
+                    response={response}
+                    key={response}
+                />
+            </div>
             <div className='prompt-area'>
                 <textarea
                     type="text"
                     id="prompt"
                     name="prompt"
-                    placeholder='Say this is a test'
+                    placeholder='Talk with AI.'
                     value={input}
                     onChange={e => handleChange(e)}
                     onKeyDown={e => handleKeyChange(e)}
                 />
-                <input type="submit" value="Submit" className="prompt-button" onClick={getResponse} />
+                <input type="submit" value={<FontAwesomeIcon icon={["fa-sharp", "fa-solid", "fa-arrow-turn-down-left"]} />} id="prompt-button" onClick={getResponse} />
             </div>
-            <h2 className='response-title'>Responses</h2>
-            {loading ? <div id='loading'><p>Loading....</p></div> : <></>}
-            {response.map((r, id) => (
-                <div className='response-div' key={id + 100}>
-                    <Prompt
-                        prompt={prompt[id]}
-                        key={prompt}
-                    />
-                    <Response
-                        response={r}
-                        key={r}
-                    />
-                </div>
-            ))}
         </div>
     )
 }

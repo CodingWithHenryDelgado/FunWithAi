@@ -3,10 +3,13 @@ import './Response.css'
 
 const Response = (props) => {
   return (
-    <div className='response-box'>
-      <h2>Response:</h2>
-      <p>{props.response}</p>
-    </div>
+    <>
+      {props.response.map((r) => (
+        <div className='response-box' key={r + " responded " + 2}>
+          <p>{r}</p>
+        </div>
+      ))}
+    </>
   )
 }
 

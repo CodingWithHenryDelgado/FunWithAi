@@ -1,14 +1,15 @@
 .App {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  text-align: left;
-  width: 100vw;
   margin: 0 auto;
 }
 
-.App-title {
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
   color: #FFF;
   font-size: 10vw;
 }
@@ -20,7 +21,7 @@ html {
 }
 
 @media screen and (min-width: 768px) {
-  .app-stuff {
+  .container {
     width: 80vw;
   }
 }

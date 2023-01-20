@@ -1,13 +1,16 @@
 import React from 'react'
-import '../Response/Response.css'
+import './Prompt.css'
 
-const Response = (props) => {
+const Prompt = (props) => {
     return (
-        <div className='prompt-box'>
-            <h2>Prompt:</h2>
-            <p>{props.prompt}</p>
-        </div>
+        <>
+            {props.prompt.map((p) => (
+                <div className='prompt-box' key={p + " sent " + 2}>
+                    <p>{p}</p>
+                </div>
+            ))}
+        </>
     )
 }
 
-export default Response
+export default Prompt

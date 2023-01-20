@@ -1,12 +1,14 @@
-.response-box {
-    background-color: #218FFD;
+.prompt-box {
+    background-color: #E9E9EB;
     border-radius: 20px;
-    color: #FFF;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: auto;
     margin: 2% 0;
     overflow: auto;
-    padding: 2%;
+    width: 50px;
+    min-width: 25px;
+    max-width: 90%;
+    padding-left: 5%;
 }

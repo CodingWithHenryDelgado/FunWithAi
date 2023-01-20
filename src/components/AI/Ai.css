@@ -3,31 +3,42 @@
     font-size: 4vw;
 }
 
+.chat {
+    border: #5EE346 1px solid;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    min-height: 500px;
+    width: 90%;
+}
+
 .prompt-area {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    flex-direction: column;
 }
 
 #prompt {
     background-color: #2A2932;
     color: #5EE346;
     font-size: 2.5vh;
+    resize: none;
     padding-bottom: 100px;
-    width: 100%;
+    width: 80%;
 }
 
 #prompt:focus {
     border-color: #5EE346;
     outline: 0 none;
 }
-  
+
 .prompt-title {
     color: #FFF;
 }
-  
-.prompt-button {
+
+#prompt-button {
     background-color: #0043C8;
     border: none;
     border-radius: 5px;
@@ -39,15 +50,15 @@
     width: 125px;
 }
 
-.prompt-button:hover {
+#prompt-button:hover {
     color: #0043C8;
     background-color: #FFF;
 }
 
-.prompt-button:after {
+#prompt-button:after {
     color: #5EE346;
 }
-  
+
 .response-title {
     color: #FFF;
     font-size: 5vh;
@@ -57,16 +68,16 @@
 
 @media screen and (min-width: 768px) {
     .prompt-area {
-      width: 70vw;
+        width: 70vw;
     }
 }
 
 @media screen and (min-width: 1024px) {
-  .prompt-button {
-    margin-left: 59vw;
-  }
+    #prompt-button {
+        margin-left: 59vw;
+    }
 
-  #loading {
-      font-size: 2vw;
-  }
+    #loading {
+        font-size: 2vw;
+    }
 }
