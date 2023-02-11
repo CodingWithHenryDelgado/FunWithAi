@@ -1,6 +1,9 @@
-.responsive-div {
-    margin: 0;
-    padding: 1em;
+.response-div {
+    border-radius: 20px;
+    padding: 0.25em;
+    margin: 0.5em;
+    max-height: 500px;
+    overflow-y: scroll;
 }
 
 .prompt-area {
