@@ -44,3 +44,10 @@
     padding: 0.25em;
     margin: 0.5em;
 }
+
+@media only screen and (min-width: 768px) {
+    .chat {
+        max-width: 600px;
+        width: 100%;
+    }
+}
