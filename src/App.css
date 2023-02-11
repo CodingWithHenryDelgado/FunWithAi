@@ -11,7 +11,6 @@
 
 .title {
   color: #FFF;
-  font-size: 10vw;
 }
 
 html {
@@ -20,11 +19,7 @@ html {
   overflow-x: hidden;
 }
 
-@media screen and (min-width: 768px) {
-  .container {
-    width: 80vw;
-  }
-}
+@media screen and (min-width: 768px) {}
 
 @media screen and (min-width: 1024px) {
   .App-title {

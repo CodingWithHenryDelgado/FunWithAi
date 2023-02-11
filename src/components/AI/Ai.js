@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
-import './../Response/Response.css'
-import Response from './../Response/Response';
-import Prompt from './../Prompt/Prompt';
 import './Ai.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Loading from './../Loading/Loading';
+import Chat from './../Chat/Chat';
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 const API_KEY_2 = `${process.env.REACT_APP_API_KEY_2}`
 
 export function Ai() {
     const [input, setInput] = useState('')
     const [prompt, setPrompt] = useState([])
-    const [response, setResponse] = useState([])
     const [loading, setLoading] = useState(false)
 
     const getResponse = async () => {
@@ -31,7 +27,7 @@ export function Ai() {
             })
         })
             .then(response => response.json())
-            .then(data => setResponse(state => [...state, data.choices[0].text]))
+            .then(data => setPrompt(state => [...state, data.choices[0].text]))
         setLoading(false)
     }
 
@@ -50,19 +46,15 @@ export function Ai() {
 
     return (
         <div className='chat'>
-            <div className='response-div'>
-                <Prompt
-                    prompt={prompt}
+            <ul className='response-div'>
+                <Chat
+                    chat={prompt}
                     key={prompt}
                 />
                 <Loading
                     loading={loading}
                 />
-                <Response
-                    response={response}
-                    key={response}
-                />
-            </div>
+            </ul>
             <div className='prompt-area'>
                 <textarea
                     type="text"
@@ -73,7 +65,7 @@ export function Ai() {
                     onChange={e => handleChange(e)}
                     onKeyDown={e => handleKeyChange(e)}
                 />
-                <input type="submit" value={<FontAwesomeIcon icon={["fa-sharp", "fa-solid", "fa-arrow-turn-down-left"]} />} id="prompt-button" onClick={getResponse} />
+                <input type="submit" value="←" id="prompt-button" onClick={getResponse} />
             </div>
         </div >
     )

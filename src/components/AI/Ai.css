@@ -1,27 +1,23 @@
-.chat {
-    border: #5EE346 1px solid;
-    border-radius: 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
-    min-height: 500px;
-    width: 90%;
+.responsive-div {
+    margin: 0;
+    padding: 1em;
 }
 
 .prompt-area {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    border-bottom: 20px;
+    width: 100%;
 }
 
 #prompt {
     background-color: #2A2932;
+    border-bottom-left-radius: 20px;
     color: #5EE346;
-    font-size: 2.5vh;
+    font-size: 1.45em;
     resize: none;
-    padding-bottom: 100px;
-    width: 80%;
+    width: 100%;
 }
 
 #prompt:focus {
@@ -32,13 +28,14 @@
 #prompt-button {
     background-color: #0043C8;
     border: none;
-    border-radius: 5px;
+    border-bottom-right-radius: 20px;
     color: #FFF;
     font-size: 2vh;
     height: 50px;
     margin-top: 3px;
     outline: none;
-    width: 125px;
+    width: fit-content;
+    padding: 0 1em;
 }
 
 #prompt-button:hover {
