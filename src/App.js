@@ -12,8 +12,8 @@ function App() {
   return (
     <div className={`App ${darkMode ? 'dark' : 'light'}`}>
       <div className='container'>
-        <button onClick={toggleDarkMode}>
-          {darkMode ? "Light Mode" : "Dark Mode"}
+        <button className={`toggle ${darkMode ? 'dark' : 'light'}`} onClick={toggleDarkMode}>
+          {darkMode ? "Light" : "Dark"}
         </button>
         <Ai />
       </div>
