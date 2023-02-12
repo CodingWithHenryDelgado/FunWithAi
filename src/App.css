@@ -1,5 +1,16 @@
 .App {
+  height: 100vh;
   margin: 0 auto;
+}
+
+.App.light {
+  background-color: #EEE;
+  color: #000;
+}
+
+.App.dark {
+  background-color: #2A2932;
+  color: #FFF;
 }
 
 .container {
@@ -9,14 +20,19 @@
   flex-direction: column;
 }
 
-.title {
-  color: #FFF;
-}
-
 html {
-  background-color: #2A2932;
   margin: 0;
   overflow-x: hidden;
+}
+
+.light-mode {
+  background-color: #FFF;
+  color: #000;
+}
+
+.dark-mode {
+  background-color: #2A2932;
+  color: #FFF;
 }
 
 @media screen and (min-width: 768px) {}

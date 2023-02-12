@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './Ai.css'
 import Loading from './../Loading/Loading';
 import Chat from './../Chat/Chat';
@@ -9,6 +9,13 @@ export function Ai() {
     const [input, setInput] = useState('')
     const [prompt, setPrompt] = useState([])
     const [loading, setLoading] = useState(false)
+    const chatContainerRef = useRef(null);
+
+    useEffect(() => {
+        window.requestAnimationFrame(() => {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        });
+    }, [prompt]);
 
     const getResponse = async () => {
         setLoading(true)
@@ -46,7 +53,7 @@ export function Ai() {
 
     return (
         <div className='chat'>
-            <ul className='response-div'>
+            <ul className='response-div' ref={chatContainerRef}>
                 <Chat
                     chat={prompt}
                     key={prompt}

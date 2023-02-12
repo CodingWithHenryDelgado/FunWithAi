@@ -12,7 +12,7 @@ const Chat = (props) => {
     return (
         <>
             {props.chat.map((p, index) => (
-                <li className={`chat-box ${getChatColor(index)}`} key={p + " sent " + 2}>
+                <li className={`chat-box ${getChatColor(index)}`} key={index}>
                     {p}
                 </li>
             ))}
