@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './Ai.css'
+import InputArea from '../InputArea/InputArea';
 import Loading from './../Loading/Loading';
 import Chat from './../Chat/Chat';
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
@@ -12,9 +13,8 @@ export function Ai() {
     const chatContainerRef = useRef(null);
 
     useEffect(() => {
-        window.requestAnimationFrame(() => {
-            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-        });
+        const chatContainer = chatContainerRef.current;
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }, [prompt]);
 
     const getResponse = async () => {
@@ -62,18 +62,12 @@ export function Ai() {
                     loading={loading}
                 />
             </ul>
-            <div className='prompt-area'>
-                <textarea
-                    type="text"
-                    id="prompt"
-                    name="prompt"
-                    placeholder='Talk with AI.'
-                    value={input}
-                    onChange={e => handleChange(e)}
-                    onKeyDown={e => handleKeyChange(e)}
-                />
-                <input type="submit" value="←" id="prompt-button" onClick={getResponse} />
-            </div>
+            <InputArea
+                input={input}
+                handleChange={handleChange}
+                handleKeyChange={handleKeyChange}
+                getResponse={getResponse}
+            />
         </div >
     )
 }
