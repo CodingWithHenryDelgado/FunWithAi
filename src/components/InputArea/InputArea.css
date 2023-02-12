@@ -6,22 +6,20 @@
 }
 
 #prompt {
-    /* border-bottom-left-radius: 20px; */
-    color: #5EE346;
+    background-color: transparent;
+    color: inherit;
     font-size: 1.45em;
     resize: none;
     width: 100%;
 }
 
 #prompt:focus {
-    border-color: #5EE346;
     outline: 0 none;
 }
 
 #prompt-button {
     background-color: #0043C8;
     border: none;
-    /* border-bottom-right-radius: 20px; */
     color: #FFF;
     font-size: 2vh;
     height: 50px;
