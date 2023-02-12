@@ -1,9 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Ai } from './components/AI/Ai';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = React.useState(localStorage.getItem('dark-mode') === 'true');
+
+  React.useEffect(() => {
+    localStorage.setItem('dark-mode', darkMode);
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
