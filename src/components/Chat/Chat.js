@@ -7,6 +7,7 @@ const Chat = (props) => {
         "chat-gray"
     ];
 
+    //The AI response's are in blue
     const getChatColor = (index) => COLORS[index % 2];
 
     return (
