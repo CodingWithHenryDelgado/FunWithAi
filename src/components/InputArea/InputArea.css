@@ -31,8 +31,9 @@
 }
 
 #prompt-button:hover {
-    color: #0043C8;
     background-color: #FFF;
+    color: #0043C8;
+    cursor: pointer;
 }
 
 #prompt-button:after {
