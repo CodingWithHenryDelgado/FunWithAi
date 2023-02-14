@@ -8,6 +8,10 @@
     width: 90%;
 }
 
+.new-chat-line {
+    display: none;
+}
+
 .chat-box {
     border-radius: 20px;
     display: flex;
@@ -44,7 +48,34 @@
 
 @media only screen and (min-width: 768px) {
     .chat {
-        max-width: 600px;
+        max-width: 700px;
         width: 100%;
     }
+
+    .chat-box {
+        max-width: 55%;
+        padding: 3%;
+    }
+
+    .new-chat-line {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .chat-icon {
+        border-radius: 50%;
+        width: 75px;
+    }
+
+    .chat-blue,
+    .chat-gray {
+        margin-right: 0;
+    }
+
+    .chat-gray {
+        margin-left: 3%;
+    }
+
 }

@@ -12,11 +12,12 @@
     color: inherit;
     font-size: 1.45em;
     resize: none;
+    height: 46px;
     width: 100%;
 }
 
 #prompt:focus {
-    outline: 0 none;
+    outline: 1px solid #0043C8;
 }
 
 #prompt-button {
@@ -38,4 +39,14 @@
 
 #prompt-button:after {
     color: #5EE346;
+}
+
+@media only screen and (min-width: 768px) {
+    #prompt {
+        height: 70px;
+    }
+
+    #prompt-button {
+        height: 75px;
+    }
 }
