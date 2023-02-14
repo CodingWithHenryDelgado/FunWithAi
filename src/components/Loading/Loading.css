@@ -21,6 +21,7 @@
     justify-content: space-around;
     border-radius: 75px;
     background-color: #ddd;
+    margin-left: 25px;
 }
 
 .text-bubble::before,
